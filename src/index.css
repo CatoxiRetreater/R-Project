@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1a2a3a;
+  --secondary-color: #0c1824;
+  --accent-color: #4a8fe7;
+  --text-color: #e0e7ff;
+  --highlight-color: #64ffda;
+  --error-color: #ff6b6b;
+  --success-color: #2ecc71;
+  --neutral-color: #f39c12;
+  --primary-dark: #1a2a3a;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Particle background */
+.particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-30px) translateX(15px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(30px);
+  }
+  75% {
+    transform: translateY(30px) translateX(15px);
+  }
+}
+
+/* Button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2;
+}
+
+.btn-primary {
+  @apply bg-accent text-white hover:bg-accent/90 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-white/10 text-white hover:bg-white/20;
+}
+
+.btn-success {
+  @apply bg-success text-white hover:bg-success/90 hover:-translate-y-1 hover:shadow-lg;
+}
